@@ -1,12 +1,12 @@
 package com.example.cooking;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cooking.Adapters.RandomRecipeAdapter;
 import com.example.cooking.Listener.RandomRecipeResponseListener;

@@ -1,6 +1,7 @@
 package com.example.cooking;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.cooking.Listener.RandomRecipeResponseListener;
 import com.example.cooking.Models.RandomRecipeApiResponse;
@@ -14,27 +15,28 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public class RequestManager {
-    Context context;
-    Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://api.spoonacular.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build();
+   Context context;
+   Retrofit retrofit = new Retrofit.Builder()
+           .baseUrl("https://api.spoonacular.com/")
+           .addConverterFactory(GsonConverterFactory.create())
+           .build();
 
     public RequestManager(Context context) {
         this.context = context;
     }
 
-    public void getRandomRecipes(RandomRecipeResponseListener listener) {
+    public void getRandomRecipes(RandomRecipeResponseListener listener){
         CallRandomRecipes callRandomRecipes = retrofit.create(CallRandomRecipes.class);
         Call<RandomRecipeApiResponse> call = callRandomRecipes.callRandomRecipe(context.getString(R.string.api_key), "10");
         call.enqueue(new Callback<RandomRecipeApiResponse>() {
             @Override
             public void onResponse(Call<RandomRecipeApiResponse> call, Response<RandomRecipeApiResponse> response) {
-                if(!response.isSuccessful()) {
-                    listener.didFetch(response.body(), response.message());
+                if(!response.isSuccessful()){
+                    listener.didError(response.message());
                     return;
                 }
-                listener.didFetch(response.body(), response.message());
+                listener.didFetch(response.body(),response.message() );
+
             }
 
             @Override
@@ -44,7 +46,7 @@ public class RequestManager {
         });
     }
 
-    private interface CallRandomRecipes {
+    private interface CallRandomRecipes{
         @GET("recipes/random")
         Call<RandomRecipeApiResponse> callRandomRecipe(
                 @Query("apiKey") String apiKey,

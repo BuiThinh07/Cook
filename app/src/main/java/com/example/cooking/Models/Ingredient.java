@@ -1,9 +1,8 @@
 package com.example.cooking.Models;
 
-public class Equipment {
+public class Ingredient {
     public int id;
     public String name;
     public String localizedName;
     public String image;
-    public Temperature temperature;
 }

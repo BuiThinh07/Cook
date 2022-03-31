@@ -1,6 +1,6 @@
 package com.example.cooking.Models;
 
-public class Temperature {
-    public double number;
+public class Length {
+    public int number;
     public String unit;
 }

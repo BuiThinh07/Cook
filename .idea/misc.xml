@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Cook/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Cook/app/src/main/res/layout/list_random_recipe.xml" value="0.22" />
         <entry key="..\:/Users/XH/AndroidStudioProjects/Cooking2/app/src/main/res/drawable/ic_baseline_thumb_up_24.xml" value="0.2212962962962963" />
         <entry key="..\:/Users/XH/AndroidStudioProjects/Cooking2/app/src/main/res/layout/activity_main.xml" value="0.1222879684418146" />
         <entry key="..\:/Users/XH/AndroidStudioProjects/Cooking2/app/src/main/res/layout/list_random_recipe.xml" value="0.264" />
