@@ -12,6 +12,10 @@
         <entry key="..\:/Users/XH/AndroidStudioProjects/Cooking2/app/src/main/res/drawable/ic_baseline_thumb_up_24.xml" value="0.2212962962962963" />
         <entry key="..\:/Users/XH/AndroidStudioProjects/Cooking2/app/src/main/res/layout/activity_main.xml" value="0.1222879684418146" />
         <entry key="..\:/Users/XH/AndroidStudioProjects/Cooking2/app/src/main/res/layout/list_random_recipe.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/activity_recipe_details.xml" value="0.1099290780141844" />
+        <entry key="app/src/main/res/layout/list_instructions.xml" value="0.1099290780141844" />
+        <entry key="app/src/main/res/layout/list_instructions_step_items.xml" value="0.4607142857142857" />
+        <entry key="app/src/main/res/layout/list_instructions_steps.xml" value="0.25" />
       </map>
     </option>
   </component>
