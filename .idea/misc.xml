@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidTest/Cook1/app/src/main/res/drawable/circle.xml" value="0.1" />
+        <entry key="..\:/AndroidTest/Cook1/app/src/main/res/drawable/custombutton.xml" value="0.1" />
+        <entry key="..\:/AndroidTest/Cook1/app/src/main/res/drawable/custombutton2.xml" value="0.1" />
+        <entry key="..\:/AndroidTest/Cook1/app/src/main/res/drawable/ic_like.xml" value="0.1" />
+        <entry key="..\:/AndroidTest/Cook1/app/src/main/res/drawable/ic_time.xml" value="0.1" />
+        <entry key="..\:/AndroidTest/Cook1/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/AndroidTest/Cook1/app/src/main/res/layout/activity_profile.xml" value="0.1793478260869565" />
+        <entry key="..\:/AndroidTest/Cook1/app/src/main/res/layout/activity_sign_up.xml" value="0.12335359675785208" />
         <entry key="..\:/Cook/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Cook/app/src/main/res/layout/activity_recipe_details.xml" value="0.22" />
         <entry key="..\:/Cook/app/src/main/res/layout/list_meal_ingredients.xml" value="0.25" />

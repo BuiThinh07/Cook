@@ -12,10 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cooking">
         <activity
+            android:name=".Profile_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp_Activity"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".Login_Activity" -->
+        <!-- android:exported="false" /> -->
+        <activity
             android:name=".RecipeDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Login_Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
