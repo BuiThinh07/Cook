@@ -11,68 +11,98 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="#3fff"
         android:gravity="center"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="76dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Moon light"
             android:background="@drawable/circle"
             android:gravity="center"
-            android:textColor="#ffffff"/>
+            android:text="Moon light"
+            android:textColor="#ffffff" />
+
         <EditText
-            android:layout_marginTop="15dp"
-            android:gravity="center"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:hint="Username"
-            android:textColorHint="#FFFBF6"
+            android:layout_marginTop="15dp"
             android:background="@drawable/custombutton"
-            />
-        <EditText
-            android:layout_marginTop="15dp"
             android:gravity="center"
+            android:hint="Username"
+            android:textColorHint="#FFFBF6" />
+
+        <EditText
             android:layout_width="250dp"
             android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custombutton"
+            android:gravity="center"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColorHint="#FFFBF6"
-            android:background="@drawable/custombutton"/>
+            android:textColorHint="#FFFBF6" />
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Keep me Signed in "
-            android:textColor="#FFFBF6"
-            android:hint="#FFFBF6"
             android:layout_marginTop="15dp"
             android:buttonTint="#FFFBF6"
-            />
+            android:hint="#FFFBF6"
+            android:text="Keep me Signed in "
+            android:textColor="#FFFBF6" />
+
         <Button
             android:id="@+id/loginBtn"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:text="Sign In"
-            android:textAllCaps="false"
             android:layout_marginTop="10dp"
             android:background="@drawable/custombutton2"
-            android:textColor="#FFFBF6"/>
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="#FFFBF6" />
+
         <View
             android:layout_width="fill_parent"
             android:layout_height="2dp"
-            android:background="#3fff"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:background="#3fff" />
+
         <Button
             android:id="@+id/SwitchSignInPage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:textSize="10dp"
+            android:layout_width="112dp"
+            android:layout_height="38dp"
             android:layout_marginTop="15dp"
+            android:text="Sign Up"
             android:textColor="#FFFBF6"
-            />
+            android:textSize="10dp" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btnGoogleSignIn"
+            android:layout_width="163dp"
+            android:layout_height="58dp"
+            android:baselineAligned="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+        </com.google.android.gms.common.SignInButton>
+
+        <!--        <Button-->
+<!--            android:id="@+id/btn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="64dp"-->
+<!--            android:background="@drawable/custombutton2"-->
+<!--            android:drawableLeft="@drawable/ic_google"-->
+<!--            android:padding="8dp"-->
+<!--            android:text="Sign in with Google"-->
+<!--            android:textSize="15sp" />-->
 
 
     </LinearLayout>

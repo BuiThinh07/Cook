@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Cooking</string>
     <string name="api_key">d343b962830c4156b5163647067fa074</string>
+    <string name="submit">submit</string>
 
     <string-array name="tags">
         <item>main course</item>

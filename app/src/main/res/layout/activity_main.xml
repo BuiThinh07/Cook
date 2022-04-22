@@ -33,8 +33,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="-1dp"
+                android:layout_marginBottom="0dp"
                 android:entries="@array/tags"
                 android:gravity="center"></Spinner>
+
+
         </RelativeLayout>
 
 
@@ -60,5 +65,9 @@
         android:id="@+id/recycler_random"
         android:layout_margin="4dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
 </LinearLayout>

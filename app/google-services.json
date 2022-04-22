@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "925650635392",
-    "project_id": "cook-a32e1",
-    "storage_bucket": "cook-a32e1.appspot.com"
+    "project_number": "340318096893",
+    "project_id": "demoprj-a6bac",
+    "storage_bucket": "demoprj-a6bac.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:925650635392:android:6c5b6ca10f8704d0d33465",
+        "mobilesdk_app_id": "1:340318096893:android:c82d8698157e19ffbedd94",
         "android_client_info": {
           "package_name": "com.example.cooking"
         }
       },
       "oauth_client": [
         {
-          "client_id": "925650635392-6jrb6pfip9q7s9qe4qass1s1sihf00uf.apps.googleusercontent.com",
+          "client_id": "340318096893-ggumfe1tt76245d4j40mmdv56dsgbies.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cooking",
+            "certificate_hash": "5ec34ac237351bc96dcce04233d28817413c5506"
+          }
+        },
+        {
+          "client_id": "340318096893-vsjtssfqdlqro2tob8epq4tqq5d4cr2g.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB18g3oEkdJw17t6z7rvLBnEVbckvGlpig"
+          "current_key": "AIzaSyAViSfi7Lj28u0ofbDx-gE1qU3FRlHP7T8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "925650635392-6jrb6pfip9q7s9qe4qass1s1sihf00uf.apps.googleusercontent.com",
+              "client_id": "340318096893-vsjtssfqdlqro2tob8epq4tqq5d4cr2g.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
