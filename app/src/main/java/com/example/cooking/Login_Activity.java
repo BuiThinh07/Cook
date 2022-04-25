@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -22,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
@@ -29,7 +32,8 @@ public class Login_Activity extends AppCompatActivity {
 
     Button LoginClick ;
     Button switchSignInPage ;
-
+    EditText etLoginEmail;
+    EditText etLoginPassword;
     public static final String TAG = "GoogleSignIn";
     public static final int RC_SIGN_IN = 321;
     private SignInButton btnSignInWithGoogle;
@@ -42,13 +46,14 @@ public class Login_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        etLoginEmail = findViewById(R.id.text_userName);
+        etLoginPassword = findViewById(R.id.text_pass);
+
         LoginClick = (Button) findViewById(R.id.loginBtn);
         LoginClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login_Activity.this,
-                        MainActivity.class);
-                startActivity(intent);
+                loginUser();
             }
         });
 
@@ -70,6 +75,43 @@ public class Login_Activity extends AppCompatActivity {
             signIn();
         });
 
+    }
+
+    private void loginUser(){
+        String email = etLoginEmail.getText().toString();
+        String password = etLoginPassword.getText().toString();
+
+        if (TextUtils.isEmpty(email)){
+            etLoginEmail.setError("Email cannot be empty");
+            etLoginEmail.requestFocus();
+        }else if (TextUtils.isEmpty(password)){
+            etLoginPassword.setError("Password cannot be empty");
+            etLoginPassword.requestFocus();
+        }else{
+            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()){
+                        FirebaseUser account = mAuth.getCurrentUser();
+                        String userName = account.getDisplayName();
+                        String userEmail = account.getEmail();
+                        String userPhoto = "https://th.bing.com/th/id/OIP.m5KS5IMS3UlUJPRzqQ2zlwHaFj?pid=ImgDet&rs=1";
+
+                        SharedPreferences.Editor editor = getApplicationContext()
+                                .getSharedPreferences("MyPrefs",MODE_PRIVATE)
+                                .edit();
+                        editor.putString("username", userName);
+                        editor.putString("userEmail", userEmail);
+                        editor.putString("userPhoto", userPhoto);
+                        editor.apply();
+                        Toast.makeText(Login_Activity.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(Login_Activity.this, Profile_Activity.class));
+                    }else{
+                        Toast.makeText(Login_Activity.this, "Log in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
     }
 
     private void requestGoogleSignIn(){

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/pexels_pixabay_255501"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -18,39 +18,38 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Moon light"
+            android:text="Register"
+            android:textSize="30dp"
+            android:textFontWeight="700"
             android:background="@drawable/circle"
+            android:backgroundTint="@color/white"
+            android:fontFamily="cursive"
             android:gravity="center"
-            android:textColor="#ffffff"/>
+            android:textColor="@color/black"/>
         <EditText
             android:layout_marginTop="15dp"
+            android:id="@+id/singupEmail"
             android:gravity="center"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:hint="Fullname"
-            android:textColorHint="#FFFBF6"
+            android:hint="Username (abc@gmail)"
+            android:textColor="@color/black"
+            android:textColorHint="#D6B0B0"
             android:background="@drawable/custombutton"
             />
         <EditText
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:hint="Username"
-            android:textColorHint="#FFFBF6"
-            android:background="@drawable/custombutton"
-            />
-        <EditText
+            android:id="@+id/singupPass"
             android:layout_marginTop="15dp"
             android:gravity="center"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textColorHint="#FFFBF6"
+            android:textColor="@color/black"
+            android:textColorHint="#D6B0B0"
             android:background="@drawable/custombutton"/>
         <Button
-            android:id="@+id/SignInBtn"
+            android:id="@+id/SignUpBtn"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:text="Sign Up"

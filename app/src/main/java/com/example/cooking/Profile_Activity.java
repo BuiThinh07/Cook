@@ -16,6 +16,7 @@ public class Profile_Activity extends AppCompatActivity {
 
     public static final String TAG = "GoogleSignIn";
     TextView tvUserName;
+    TextView tv_mail;
     ImageView userImageView;
     Button bt_continue;
     Button bt_logout;
@@ -26,15 +27,18 @@ public class Profile_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         tvUserName = findViewById(R.id.tv_name);
+        tv_mail = findViewById(R.id.tv_mail);
         userImageView = findViewById(R.id.iv_image);
         bt_continue = findViewById(R.id.bt_continue);
         bt_logout = findViewById(R.id.bt_logout);
 
         SharedPreferences preferences = this.getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String userName = preferences.getString("username","");
+        String mail = preferences.getString("userEmail","");
         String userImageUrl = preferences.getString("userPhoto","");
 
         tvUserName.setText(userName);
+        tv_mail.setText("Welcome "+mail+"!");
         Glide.with(this).load(userImageUrl).into(userImageView);
 
         bt_continue.setOnClickListener(view -> {

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/pexels_pixabay_255501"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -22,29 +22,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Log In"
+            android:textSize="30dp"
+            android:textFontWeight="700"
             android:background="@drawable/circle"
+            android:backgroundTint="@color/white"
+            android:fontFamily="cursive"
             android:gravity="center"
-            android:text="Moon light"
-            android:textColor="#ffffff" />
+            android:textColor="@color/black"/>
 
         <EditText
+            android:id="@+id/text_userName"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/custombutton"
             android:gravity="center"
             android:hint="Username"
-            android:textColorHint="#FFFBF6" />
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
 
         <EditText
+            android:id="@+id/text_pass"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/custombutton"
             android:gravity="center"
             android:hint="Password"
+            android:textColor="@color/black"
             android:inputType="textPassword"
-            android:textColorHint="#FFFBF6" />
+            android:textColorHint="@color/black" />
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -83,7 +91,7 @@
         <com.google.android.gms.common.SignInButton
             android:id="@+id/btnGoogleSignIn"
             android:layout_width="163dp"
-            android:layout_height="58dp"
+            android:layout_height="50dp"
             android:baselineAligned="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
