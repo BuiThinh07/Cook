@@ -1,5 +1,6 @@
 package com.example.cooking.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -47,7 +48,7 @@ public class RandomRecipeAdapter extends  RecyclerView.Adapter<RandomRecipeViewH
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RandomRecipeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RandomRecipeViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.textView_title.setText(list.get(position).title);
         holder.textView_title.setSelected(true);
         holder.textView_likes.setText(list.get(position).aggregateLikes+" Likes");
@@ -72,6 +73,13 @@ public class RandomRecipeAdapter extends  RecyclerView.Adapter<RandomRecipeViewH
             @Override
             public void onClick(View view) {
                 listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id));
+            }
+        });
+
+        holder.textView_likes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.textView_likes.setText(list.get(position).aggregateLikes+1+" Likes");
             }
         });
     }
