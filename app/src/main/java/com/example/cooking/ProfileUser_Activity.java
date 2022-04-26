@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -25,6 +26,7 @@ public class ProfileUser_Activity extends AppCompatActivity {
     private boolean mTimerRunning;
 
     private String countTime;
+    private String countTime1;
 
     private long mTimeLeftInMillis ;
 
@@ -37,11 +39,27 @@ public class ProfileUser_Activity extends AppCompatActivity {
 
         SharedPreferences preferences = this.getSharedPreferences("MyPrefs1", MODE_PRIVATE);
         countTime = preferences.getString("time","");
-        mTextViewCountDown.setText(countTime +":00");
+
+
+        SharedPreferences preferences2 = this.getSharedPreferences("MyPrefs2", MODE_PRIVATE);
+        countTime1 = preferences2.getString("time1","");
+
+
+
+        Toast.makeText(ProfileUser_Activity.this, "jh"+countTime1, Toast.LENGTH_SHORT).show();
+        if (!countTime1.equals("")){
+            mTimeLeftInMillis = Integer.parseInt(countTime1);
+            Toast.makeText(ProfileUser_Activity.this, "jh"+mTimeLeftInMillis, Toast.LENGTH_SHORT).show();
+            int counttimeshow = Integer.parseInt(countTime1) /1000 *60;
+            Toast.makeText(ProfileUser_Activity.this, "Use"+counttimeshow, Toast.LENGTH_SHORT).show();
+            mTextViewCountDown.setText(counttimeshow +":00");
+        }else {
+            mTimeLeftInMillis = Integer.parseInt(countTime);
+            mTimeLeftInMillis = mTimeLeftInMillis *1000 *60;
+            mTextViewCountDown.setText(countTime +":00");
+        }
 
 //        code tiem
-        mTimeLeftInMillis = Integer.parseInt(countTime);
-        mTimeLeftInMillis = mTimeLeftInMillis *1000 *60;
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
 
         mButtonStartPause = findViewById(R.id.button_start_pause);
