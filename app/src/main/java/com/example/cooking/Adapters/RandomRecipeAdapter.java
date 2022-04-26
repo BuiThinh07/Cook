@@ -19,6 +19,7 @@ import com.example.cooking.Listener.RecipeClickListener;
 import com.example.cooking.Login_Activity;
 import com.example.cooking.Models.Measures;
 import com.example.cooking.Models.Recipe;
+import com.example.cooking.ProfileUser_Activity;
 import com.example.cooking.Profile_Activity;
 import com.example.cooking.R;
 import com.example.cooking.SignUp_Activity;
@@ -55,10 +56,12 @@ public class RandomRecipeAdapter extends  RecyclerView.Adapter<RandomRecipeViewH
         holder.CountTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), Profile_Activity.class);
+                Intent intent = new Intent(view.getContext(), ProfileUser_Activity.class);
 
-                SharedPreferences.Editor editor = (SharedPreferences.Editor) context.getSharedPreferences("MyPrefs1",context.MODE_PRIVATE);
+                SharedPreferences sp = context.getSharedPreferences("MyPrefs1",context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
                 editor.putString("time", String.valueOf(list.get(holder.getAdapterPosition()).readyInMinutes));
+                editor.commit();
                 context.startActivity(intent);
             }
         });
