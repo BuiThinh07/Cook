@@ -1,19 +1,27 @@
 package com.example.cooking.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cooking.Listener.RecipeClickListener;
+import com.example.cooking.Login_Activity;
+import com.example.cooking.Models.Measures;
 import com.example.cooking.Models.Recipe;
+import com.example.cooking.Profile_Activity;
 import com.example.cooking.R;
+import com.example.cooking.SignUp_Activity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -44,9 +52,20 @@ public class RandomRecipeAdapter extends  RecyclerView.Adapter<RandomRecipeViewH
         holder.textView_likes.setText(list.get(position).aggregateLikes+" Likes");
         holder.textView_servings.setText(list.get(position).servings+" Servings");
         holder.textView_time.setText(list.get(position).readyInMinutes+ " Minutes");
+        holder.CountTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Profile_Activity.class);
+
+                SharedPreferences.Editor editor = (SharedPreferences.Editor) context.getSharedPreferences("MyPrefs1",context.MODE_PRIVATE);
+                editor.putString("time", String.valueOf(list.get(holder.getAdapterPosition()).readyInMinutes));
+                context.startActivity(intent);
+            }
+        });
         Picasso.get().load(list.get(position).image).into(holder.imageView_food);
 
-        holder.random_list_container.setOnClickListener(new View.OnClickListener() {
+
+        holder.random_list_container.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.onRecipeClicked(String.valueOf(list.get(holder.getAdapterPosition()).id));
@@ -63,6 +82,7 @@ class RandomRecipeViewHolder extends RecyclerView.ViewHolder {
     CardView random_list_container;
     TextView textView_title, textView_servings, textView_likes, textView_time;
     ImageView imageView_food;
+    LinearLayout CountTime;
 
     public RandomRecipeViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -72,6 +92,7 @@ class RandomRecipeViewHolder extends RecyclerView.ViewHolder {
         textView_likes = itemView.findViewById(R.id.textView_likes);
         textView_time = itemView.findViewById(R.id.textView_time);
         imageView_food = itemView.findViewById(R.id.imageView_food);
+        CountTime= itemView.findViewById(R.id.CountTime);
     }
 }
 
