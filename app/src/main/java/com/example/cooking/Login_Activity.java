@@ -155,7 +155,7 @@ public class Login_Activity extends AppCompatActivity {
                         .getSharedPreferences("MyPrefs",MODE_PRIVATE)
                         .edit();
                 editor.putString("username", userName);
-                editor.putString("useremail", userEmail);
+                editor.putString("userEmail", userEmail);
                 editor.putString("userPhoto", userPhoto);
                 editor.apply();
 
